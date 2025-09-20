@@ -14,7 +14,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"gleam.gleam"
+				"gleam.gleam",
+				"tamasfe.even-better-toml"
 			]
 		}
 	}
