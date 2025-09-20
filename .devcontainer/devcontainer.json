@@ -8,7 +8,16 @@
 		// Path is relative to the devcontainer.json file.
 		"dockerfile": "Dockerfile"
 	},
-	"runArgs": ["--hostname=gleam-container"]
+	"runArgs": [
+		"--hostname=gleam-container"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"gleam.gleam"
+			]
+		}
+	}
 	// "features": {
 	// 	"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {}
 	// }
