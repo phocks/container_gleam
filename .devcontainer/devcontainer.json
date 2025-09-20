@@ -8,9 +8,10 @@
 		// Path is relative to the devcontainer.json file.
 		"dockerfile": "Dockerfile"
 	},
-	"features": {
-		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {}
-	}
+	"runArgs": ["--hostname=gleam-container"]
+	// "features": {
+	// 	"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {}
+	// }
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -21,6 +22,6 @@
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root",
-	,
-	"postCreateCommand": "brew install gleam"
+	// ,
+	// "postCreateCommand": "brew install gleam"
 }
