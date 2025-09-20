@@ -12,7 +12,7 @@ pub fn main() {
 
   let job = fn() {
     io.println("Task executed!")
-    echo send_request()
+    let _wow = echo send_request()
 
     Nil
   }
