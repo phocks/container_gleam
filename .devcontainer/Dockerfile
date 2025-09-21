@@ -6,15 +6,15 @@ RUN apt-get update && apt-get upgrade -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Create a new user with a home directory
-RUN useradd -m -s /bin/bash gleam
+RUN useradd -m -s /bin/bash user
 
 # Grant sudo privileges
-RUN echo "gleam ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch to the new user
-USER gleam
+USER user
 
 # Set working directory
-WORKDIR /home/gleam
+WORKDIR /home/user
 
 CMD ["bash"]

@@ -9,7 +9,7 @@
 		"dockerfile": "Dockerfile"
 	},
 	"runArgs": [
-		"--hostname=gleam-container"
+		"--hostname=gleam"
 	],
 	"customizations": {
 		"vscode": {
