@@ -5,7 +5,26 @@ import gleam/http/request
 import gleam/http/response
 import gleam/httpc
 import gleam/io
+import gleam/otp/actor
 import gleam/result
+
+pub type Message {
+  Shutdown
+  Log(text: String)
+}
+
+fn handle_message(state: Nil, message: Message) -> actor.Next(Nil, Message) {
+  case message {
+    Shutdown -> {
+      io.println("Shutting down actor")
+      actor.stop()
+    }
+    Log(text) -> {
+      io.println("Log message received: " <> text)
+      actor.continue(state)
+    }
+  }
+}
 
 pub fn main() {
   let assert Ok(cron) = clockwork.from_string("*/1 * * * *")
@@ -22,6 +41,21 @@ pub fn main() {
   let assert Ok(_schedule) = clockwork_schedule.start(scheduler)
 
   // clockwork_schedule.stop(schedule)
+
+  let assert Ok(actor) =
+    actor.new(Nil)
+    |> actor.on_message(handle_message)
+    |> actor.start
+
+  let subject = actor.data
+
+  // Send a log message asynchronously
+  process.send(subject, Log("Hello from main"))
+
+  // Send shutdown message asynchronously
+  // process.send(subject, Shutdown)
+
+  // process.sleep(50)
 
   process.sleep_forever()
 }
