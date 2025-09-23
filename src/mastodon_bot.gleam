@@ -1,5 +1,3 @@
-import clockwork
-import clockwork_schedule
 import gleam/erlang/process
 import gleam/http/request
 import gleam/http/response
@@ -7,6 +5,9 @@ import gleam/httpc
 import gleam/io
 import gleam/otp/actor
 import gleam/result
+
+// Local imports
+import cron
 
 pub type Message {
   Shutdown
@@ -26,21 +27,15 @@ fn handle_message(state: Nil, message: Message) -> actor.Next(Nil, Message) {
   }
 }
 
+fn job() {
+  io.println("Task executed!")
+  let _wow = echo send_request()
+
+  Nil
+}
+
 pub fn main() {
-  let assert Ok(cron) = clockwork.from_string("*/1 * * * *")
-
-  let job = fn() {
-    io.println("Task executed!")
-    let _wow = echo send_request()
-
-    Nil
-  }
-
-  // Create and start the scheduler
-  let scheduler = clockwork_schedule.new("my_task", cron, job)
-  let assert Ok(_schedule) = clockwork_schedule.start(scheduler)
-
-  // clockwork_schedule.stop(schedule)
+  cron.start_cron(job)
 
   let assert Ok(actor) =
     actor.new(Nil)
@@ -49,14 +44,7 @@ pub fn main() {
 
   let subject = actor.data
 
-  // Send a log message asynchronously
   process.send(subject, Log("Hello from main"))
-
-  // Send shutdown message asynchronously
-  // process.send(subject, Shutdown)
-
-  // process.sleep(50)
-
   process.sleep_forever()
 }
 
