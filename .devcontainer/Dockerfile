@@ -1,5 +1,5 @@
-# FROM "mcr.microsoft.com/devcontainers/base:noble"
-FROM "ghcr.io/gleam-lang/gleam:v1.12.0-erlang"
+# Reference: https://github.com/gleam-lang/gleam/pkgs/container/gleam
+FROM ghcr.io/gleam-lang/gleam:v1.13.0-erlang
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y sudo && \

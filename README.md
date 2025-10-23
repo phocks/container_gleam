@@ -1,6 +1,6 @@
-# mastodon_bot
+# container_gleam
 
-A [Mastodon](https://joinmastodon.org/) bot written in [Gleam](https://gleam.run/).
+A minimal Dev Container for Gleam.
 
 ## Development
 
