@@ -15,7 +15,7 @@ version = "0.0.1"
 [dependencies]
 gleam_stdlib = ">= 0.44.0 and < 2.0.0"
 clockwork = ">= 4.0.0 and < 5.0.0"
-clockwork_schedule = ">= 1.0.0 and < 2.0.0"
+clockwork_schedule = ">= 2.0.0 and < 3.0.0"
 gleam_erlang = ">= 1.3.0 and < 2.0.0"
 gleam_httpc = ">= 5.0.0 and < 6.0.0"
 gleam_http = ">= 4.2.0 and < 5.0.0"
