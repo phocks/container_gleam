@@ -1,6 +1,6 @@
 # container_gleam
 
-A minimal Dev Container for Gleam.
+A minimal Dev Container for Gleam projects.
 
 ## Development
 
