@@ -3,7 +3,7 @@
 
 packages = [
   { name = "clockwork", version = "4.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gleam_time"], otp_app = "clockwork", source = "hex", outer_checksum = "A84AC8734E350EFCCF1336C73F33C7FB2BF6761065D714778905ACF384B0CCB9" },
-  { name = "clockwork_schedule", version = "1.0.0", build_tools = ["gleam"], requirements = ["clockwork", "gleam_erlang", "gleam_otp", "gleam_stdlib", "gleam_time", "logging"], otp_app = "clockwork_schedule", source = "hex", outer_checksum = "1238D7ABD0569575663C722DEAC3915E74842C3908B3DE62D607313E686E2CEA" },
+  { name = "clockwork_schedule", version = "2.0.0", build_tools = ["gleam"], requirements = ["clockwork", "gleam_erlang", "gleam_otp", "gleam_stdlib", "gleam_time", "logging"], otp_app = "clockwork_schedule", source = "hex", outer_checksum = "9556D6A8DA22F7FD255986A337D8291786BDBE4B92F5F35A4B967CBB1033E43E" },
   { name = "gleam_erlang", version = "1.3.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_erlang", source = "hex", outer_checksum = "1124AD3AA21143E5AF0FC5CF3D9529F6DB8CA03E43A55711B60B6B7B3874375C" },
   { name = "gleam_http", version = "4.2.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_http", source = "hex", outer_checksum = "FFE29C3832698AC3EF6202922EC534EE19540152D01A7C2D22CB97482E4AF211" },
   { name = "gleam_httpc", version = "5.0.0", build_tools = ["gleam"], requirements = ["gleam_erlang", "gleam_http", "gleam_stdlib"], otp_app = "gleam_httpc", source = "hex", outer_checksum = "C545172618D07811494E97AAA4A0FB34DA6F6D0061FDC8041C2F8E3BE2B2E48F" },
@@ -16,7 +16,7 @@ packages = [
 
 [requirements]
 clockwork = { version = ">= 4.0.0 and < 5.0.0" }
-clockwork_schedule = { version = ">= 1.0.0 and < 2.0.0" }
+clockwork_schedule = { version = ">= 2.0.0 and < 3.0.0" }
 gleam_erlang = { version = ">= 1.3.0 and < 2.0.0" }
 gleam_http = { version = ">= 4.2.0 and < 5.0.0" }
 gleam_httpc = { version = ">= 5.0.0 and < 6.0.0" }
